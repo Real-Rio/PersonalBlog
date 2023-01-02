@@ -13,7 +13,7 @@ export interface Props {
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage }
+  content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
@@ -22,17 +22,22 @@ const {
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       {heroImage && <img src={heroImage} alt={title} class="w-full mb-6" />}
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
-      {pubDate && <time>{pubDate}</time>}
+      {
+        pubDate && (
+          <div class="text-right font-bold text-base">
+            <time>{pubDate}</time>
+          </div>
+        )
+      }
       {
         updatedDate && (
-          <div>
-            {" "}
-            Last updated on <time>{updatedDate}</time>{" "}
+          <div class="text-right font-bold text-base">
+            更新于 <time>{updatedDate}</time>
           </div>
         )
       }
       <div class="divider my-2"></div>
-        <slot />
+      <slot />
     </article>
   </main>
 </BaseLayout>

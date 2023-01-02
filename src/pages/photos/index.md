@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: "test_photo"
-pubDate: "Sep 10 2022"
+pubDate: "2022.12.31"
 heroImage: "/post_img.webp"
 ---
 
