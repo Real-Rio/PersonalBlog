@@ -1,0 +1,18 @@
+---
+const posts = await Astro.glob("../pages/blog/*.{md,mdx}");
+var s1 = new Set();
+posts.map(post => {
+    post.frontmatter.tags.map(tag => {
+        s1.add(tag);
+    });
+});
+---
+
+<div class="flex space-x-2 card-actions">
+    {
+    Array.from(s1).map((tag) => {
+        return <a href={`/tags/${tag}/1`}><button class="badge badge-outline hover:shadow-xl transition ease-in-out hover:scale-[110%]">{tag}</button></a>
+    })
+    }
+    
+</div>

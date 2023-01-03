@@ -11,7 +11,10 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
+import preact from "@astrojs/preact";
+
+// https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-modern-personal-website.netlify.app',
-  integrations: [mdx(), sitemap(), tailwind()]
+  site: 'https://rioblog.fun',
+  integrations: [mdx(), sitemap(), tailwind(), preact()]
 });

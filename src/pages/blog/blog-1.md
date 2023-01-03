@@ -1,10 +1,10 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: "博客搭建记录"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+description: "Lorem ."
 pubDate: "2022.12.31"
 heroImage: "/post_img.webp"
-tags: ["Blog"]
+tags: ["Blog","摄影"]
 updatedDate: "2023.1.1"
 ---
 
