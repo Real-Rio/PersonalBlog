@@ -11,10 +11,13 @@ collections: # A list of collections the CMS should be able to edit
     - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/PostLayout.astro"}
     - { label: 'Title', name: 'title', widget: 'string' }
     - { label: 'Description', name: 'description', widget: 'text' }
-    - { label: 'Body', name: 'body', widget: 'markdown' }
     - { label: 'Tags', name: 'tags', widget: 'list' }
-    - { label: 'Publish Date', name: 'pubDate', widget: 'datetime' }
-    - { label: 'Update Date', name: 'updateDate', widget: 'datetime' }
+    - { label: 'Publish Date', name: 'pubDate', widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD"}
+    - { label: 'Update Date', name: 'updatedDate',widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD", required: false}
+    - { label: 'Body', name: 'body', widget: 'markdown' }
+    - { label: 'HeroImage', name: 'heroImage', widget: 'image', allow_multiple: false, }
 
 media_folder: 'public/images' # Folder where user uploaded files should go
 public_folder: '/images'
+
+locale: 'cn' # 本地化设置为中文
