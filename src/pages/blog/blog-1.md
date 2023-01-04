@@ -3,7 +3,7 @@ layout: "../../layouts/PostLayout.astro"
 title: "博客搭建记录"
 description: "Lorem ."
 pubDate: "2022.12.31"
-heroImage: "/post_img.webp"
+heroImage: "/images/post_img.webp"
 tags: ["Blog","摄影"]
 updatedDate: "2023.1.1"
 ---

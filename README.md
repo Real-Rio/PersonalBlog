@@ -62,7 +62,7 @@ npm run dev
 ├── public/
 │   ├── favicon.svg
 │   └── social-image.png
-│   └── sprofile.jpg
+│   └── simages/profile.jpg
 │   └── social_img.webp
 ├── astro.config.mjs
 ├── tailwind.config.cjs
