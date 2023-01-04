@@ -12,8 +12,8 @@ collections: # A list of collections the CMS should be able to edit
     - { label: 'Title', name: 'title', widget: 'string' }
     - { label: 'Description', name: 'description', widget: 'text' }
     - { label: 'Tags', name: 'tags', widget: 'list' }
-    - { label: 'Publish Date', name: 'pubDate', widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD"}
-    - { label: 'Update Date', name: 'updatedDate',widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD", required: false}
+    - { label: 'Publish Date', name: 'pubDate', widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD", format: "YYYY.MM.DD"}
+    - { label: 'Update Date', default: '', name: 'updatedDate',widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD", format: "YYYY.MM.DD", required: false}
     - { label: 'Body', name: 'body', widget: 'markdown' }
     - { label: 'HeroImage', name: 'heroImage', widget: 'image', allow_multiple: false, }
 
