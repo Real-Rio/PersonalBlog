@@ -3,7 +3,7 @@ backend:
   branch: main
 
 collections: # A list of collections the CMS should be able to edit
-- name: 'post' # Used in routes, ie.: /admin/collections/:slug/edit
+- {name: 'post' # Used in routes, ie.: /admin/collections/:slug/edit
   label: 'Post' # Used in the UI, ie.: "New Post"
   folder: 'src/pages/blog' # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
@@ -16,8 +16,9 @@ collections: # A list of collections the CMS should be able to edit
     - { label: 'Update Date', default: '', name: 'updatedDate',widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD", format: "YYYY.MM.DD", required: false}
     - { label: 'Body', name: 'body', widget: 'markdown' }
     - { label: 'HeroImage', name: 'heroImage', widget: 'image', allow_multiple: false, }
+  }
 
-- name: 'photo' # Used in routes, ie.: /admin/collections/:slug/edit
+- {name: 'photo' # Used in routes, ie.: /admin/collections/:slug/edit
   label: 'Photo' # Used in the UI, ie.: "New Post"
   folder: 'src/pages/photos' # The path to the folder where the documents are stored
   create: true # Allow users to create new documents in this collection
@@ -29,7 +30,7 @@ collections: # A list of collections the CMS should be able to edit
     - { label: 'Publish Date', name: 'pubDate', widget: 'datetime', time_format: false, date_format: "YYYY.MM.DD", format: "YYYY.MM.DD"}
     - { label: 'Body', name: 'body', widget: 'markdown' }
     - { label: 'HeroImage', name: 'heroImage', widget: 'image', allow_multiple: false, }
-
+  }
 media_folder: 'public/images' # Folder where user uploaded files should go
 public_folder: '/images'
 
