@@ -15,10 +15,12 @@
     "@astrojs/mdx": "^0.11.1",
     "@astrojs/preact": "^1.2.0",
     "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/svelte": "^1.0.2",
     "@astrojs/tailwind": "^1.0.1",
     "astro": "^1.2.3",
     "daisyui": "^2.27.0",
-    "preact": "^10.11.3"
+    "preact": "^10.11.3",
+    "svelte": "^3.55.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7"

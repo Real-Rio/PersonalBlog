@@ -14,7 +14,10 @@ import tailwind from "@astrojs/tailwind";
 import preact from "@astrojs/preact";
 
 // https://astro.build/config
+import svelte from "@astrojs/svelte";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://rioblog.fun',
-  integrations: [mdx(), sitemap(), tailwind(), preact()]
+  integrations: [mdx(), sitemap(), tailwind(), preact(), svelte()]
 });
