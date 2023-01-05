@@ -1,18 +1,48 @@
 ---
-const posts = await Astro.glob("../pages/blog/*.{md,mdx}");
+const { type } = Astro.props;
 var s1 = new Set();
-posts.map(post => {
-    post.frontmatter.tags.map(tag => {
+
+var posts;
+if (type == "blog") {
+     posts = await Astro.glob("../pages/blog/*.md");
+} else if (type == "photo") {
+     posts = await Astro.glob("../pages/photos/*.md");
+}
+posts.map((post) => {
+    post.frontmatter.tags.map((tag) => {
         s1.add(tag);
     });
 });
 ---
 
-<div class="flex space-x-2 card-actions">
-    {
-    Array.from(s1).map((tag) => {
-        return <a href={`/tags/${tag}/1`}><button class="badge badge-outline hover:shadow-xl transition ease-in-out hover:scale-[110%]">{tag}</button></a>
-    })
-    }
-    
-</div>
+{
+    type == "blog" && (
+        <div class="flex space-x-2 card-actions">
+            {Array.from(s1).map((tag) => {
+                return (
+                    <a href={`/blog/${tag}/1`}>
+                        <button class="badge badge-outline hover:shadow-xl transition ease-in-out hover:scale-[110%]">
+                            {tag}
+                        </button>
+                    </a>
+                );
+            })}
+        </div>
+    )
+}
+
+{
+    type == "photo" && (
+        <div class="flex space-x-2 card-actions">
+            {Array.from(s1).map((tag) => {
+                return (
+                    <a href={`/photos/${tag}/1`}>
+                        <button class="badge badge-outline hover:shadow-xl transition ease-in-out hover:scale-[110%]">
+                            {tag}
+                        </button>
+                    </a>
+                );
+            })}
+        </div>
+    )
+}
