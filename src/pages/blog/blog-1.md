@@ -1,16 +1,12 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: "博客搭建记录"
-description: "Lorem ."
+description: "从0到1搭建一个博客"
 pubDate: "2022.12.31"
 heroImage: "/images/post_img.webp"
-tags: ["Blog","摄影"]
+tags: ["Blog"]
 updatedDate: "2023.1.1"
 ---
-3
-
-
-
 
 
 ## 技术选型
