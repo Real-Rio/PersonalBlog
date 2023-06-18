@@ -80,10 +80,7 @@ updatedDate: "2023.1.1"
 
 ## 待解决
 
-- [ ] tailwind语法
-- [ ] 优雅地上传图片
-- [ ] front matter
 - [ ] sitemap
 - [ ] 夜间模式
-- [ ] 标签管理系统
+- [ ] 跨域
 

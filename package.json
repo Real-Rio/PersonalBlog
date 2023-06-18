@@ -18,7 +18,9 @@
     "@astrojs/svelte": "^1.0.2",
     "@astrojs/tailwind": "^1.0.1",
     "astro": "^1.2.3",
+    "astro-diagram": "^0.6.3",
     "daisyui": "^2.27.0",
+    "mermaid": "^9.3.0",
     "preact": "^10.11.3",
     "svelte": "^3.55.0"
   },
