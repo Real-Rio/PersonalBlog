@@ -22,6 +22,16 @@ Once the packages are installed you are ready to run astro. Astro comes with a b
 ``` bash
 npm run dev
 ```
+or
+``` bash
+pnpm dev
+```
+
+## Build
+
+``` bash
+pnpm build
+```
 
 ## Tech Stack
 
