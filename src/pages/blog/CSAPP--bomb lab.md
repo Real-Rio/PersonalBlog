@@ -14,6 +14,8 @@ tags: ["CS自学记录"]
 
 `layout regs`：调出寄存器视图
 
+`command+x+a`：退出layout
+
 `s`、`n`：进入函数执行，单步执行（c语言层次）
 
 `si`、`ni`：（汇编层次）
