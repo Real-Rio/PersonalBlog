@@ -11,12 +11,12 @@ import preact from "@astrojs/preact";
 import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://rioblog.fun',
   integrations: [mdx(), sitemap(), tailwind(), preact(), svelte()],
   markdown: {
-    remarkPlugins: [
-      remarkMermaid,
-    ],
+    remarkPlugins: [remarkMermaid]
   }
 });
