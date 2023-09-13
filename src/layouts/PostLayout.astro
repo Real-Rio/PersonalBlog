@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import BaseLayout from "./BaseLayout.astro";
+// import Valine from "valine";
 
 export interface Props {
   content: {
@@ -14,7 +15,7 @@ export interface Props {
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage ,location},
+  content: { title, description, pubDate, updatedDate, heroImage, location },
 } = Astro.props;
 ---
 
@@ -37,15 +38,19 @@ const {
           </div>
         )
       }
-      {
-        location && (
-          <div class="text-right font-bold text-base">
-            {location}
-          </div>
-        )
-      }
+      {location && <div class="text-right font-bold text-base">{location}</div>}
       <div class="divider my-2"></div>
       <slot />
     </article>
   </main>
+  <!-- 评论系统 -->
+  <script is:inline src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <div id="vcomments"></div>
+  <script>
+    new Valine({
+      el: "#vcomments",
+      appId: "qnPlNPXR7mRtINtFAaKmqtve-gzGzoHsz",
+      appKey: "O9uUPIazfGIDoeVlHJaW47fi",
+    });
+  </script>
 </BaseLayout>
