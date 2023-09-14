@@ -44,13 +44,29 @@ const {
     </article>
   </main>
   <!-- 评论系统 -->
-  <script is:inline src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <div id="vcomments"></div>
+  <!-- <script is:inline src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <div id="vcomments" class="mt-24"></div>
   <script>
     new Valine({
       el: "#vcomments",
       appId: "qnPlNPXR7mRtINtFAaKmqtve-gzGzoHsz",
       appKey: "O9uUPIazfGIDoeVlHJaW47fi",
     });
-  </script>
+  </script> -->
+  <div
+    id="cusdis_thread"
+    data-host="https://cusdis-blog-comment-qfi3nkhkj-real-rio.vercel.app"
+    data-app-id="69026cb6-cc1a-4c56-82fc-f87b0c99be8e"
+    data-page-id={title}
+    data-page-url="{{ PAGE_URL }}"
+    data-page-title={title}
+    class="mt-24"
+  >
+  </div>
+  <script defer src="https://cusdis-blog-comment.vercel.app/js/widget/lang/zh-cn.js"></script>
+  <script
+    async
+    defer
+    src="https://cusdis-blog-comment-qfi3nkhkj-real-rio.vercel.app/js/cusdis.es.js"
+  ></script>
 </BaseLayout>
