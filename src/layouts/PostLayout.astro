@@ -1,5 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import Menu from "../components/Menu.astro";
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -7,11 +8,15 @@ import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 
 export interface Props {
+  headings: {
+      depth: number;
+      slut: string;
+      text: string;
+    }[];
   content: {
     title: string;
     description: string;
     pubDate?: string;
-    // updatedDate?: string;
     heroImage?: string;
     lastModified: string;
     location?: string;
@@ -19,11 +24,11 @@ export interface Props {
 }
 
 const {
+  headings,
   content: {
     title,
     description,
     pubDate,
-    // updatedDate,
     heroImage,
     location,
     lastModified,
@@ -56,6 +61,8 @@ const NewlastModified = dayjs(lastModified)
       }
       {location && <div class="text-right font-bold text-base">{location}</div>}
       <div class="divider my-2"></div>
+      <!-- 目录 -->
+      <Menu headings={headings}></Menu>
       <slot />
     </article>
   </main>

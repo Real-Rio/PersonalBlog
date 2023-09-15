@@ -15,7 +15,7 @@ Both CTARGET and RTARGET take several different command line arguments:
 
 
 
-### Phase1 
+## Phase1 
 
 ```c
 void test()
@@ -84,7 +84,7 @@ c0 17 40 00 00 00 00 00
 
 
 
-### Phase2 
+## Phase2 
 
 ```c
 void touch2(unsigned val)
@@ -138,7 +138,7 @@ bf fa 97 b9 59 68 ec 17
 
 
 
-### Phase3 
+## Phase3 
 
 与phase2类似，phase3在转入touch3函数执行时会进行参数的比较，只不过参数从整型变成了字符串类型，需要将edi寄存器的值改为参数字符串的起始地址
 
@@ -202,7 +202,7 @@ fa 18 40 00 c3 31 31 31
 
 
 
-### Phase4 
+## Phase4 
 
 Phase4开始升级难度，栈启用随机化使得程序加载的位置不固定，同时栈上数据不可执行，像之前关卡利用缓冲区溢出将程序放在栈上执行的做法就不可用了
 
@@ -239,7 +239,7 @@ $2 = 0x59b997fa
 
 
 
-### Phase5 
+## Phase5 
 
 与phase4类似，只不过不是将cookie的值赋给edi，而是将cookie字符串在栈中的地址赋给edi。思路是类似`mov esp,edi;pop ebx;ret;`的汇编语句，将cookie的地址也即esp所指的单元赋值给edi，随后使用pop使得esp指向下一个栈单元，该栈单元存储着touch3的首地址，此时一条ret命令即可将程序返回到touch3中
 
