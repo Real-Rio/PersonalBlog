@@ -3,6 +3,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 import remarkMermaid from 'astro-diagram/remark-mermaid';
+import { remarkModifiedTime } from './remark-modified-time.mjs';
 
 // https://astro.build/config
 import preact from "@astrojs/preact";
@@ -17,6 +18,6 @@ export default defineConfig({
   site: 'https://rioblog.fun',
   integrations: [mdx(), sitemap(), tailwind(), preact(), svelte()],
   markdown: {
-    remarkPlugins: [remarkMermaid]
+    remarkPlugins: [remarkMermaid, remarkModifiedTime]
   }
 });

@@ -20,6 +20,7 @@
     "astro": "^3.0.13",
     "astro-diagram": "^0.7.0",
     "daisyui": "^2.52.0",
+    "dayjs": "^1.11.9",
     "mermaid": "^9.4.3",
     "postcss": "^8.4.29",
     "preact": "^10.17.1",

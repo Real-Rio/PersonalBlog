@@ -29,6 +29,9 @@ dependencies:
   daisyui:
     specifier: ^2.52.0
     version: 2.52.0(autoprefixer@10.4.15)(postcss@8.4.29)
+  dayjs:
+    specifier: ^1.11.9
+    version: 1.11.9
   mermaid:
     specifier: ^9.4.3
     version: 9.4.3

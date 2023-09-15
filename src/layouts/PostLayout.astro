@@ -1,22 +1,38 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import BaseLayout from "./BaseLayout.astro";
-// import Valine from "valine";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
 
 export interface Props {
   content: {
     title: string;
     description: string;
     pubDate?: string;
-    updatedDate?: string;
+    // updatedDate?: string;
     heroImage?: string;
+    lastModified: string;
     location?: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate, heroImage, location },
+  content: {
+    title,
+    description,
+    pubDate,
+    // updatedDate,
+    heroImage,
+    location,
+    lastModified,
+  },
 } = Astro.props;
+
+const NewlastModified = dayjs(lastModified)
+  .utc()
+  .format("YYYY.MM.DD");
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -32,9 +48,9 @@ const {
         )
       }
       {
-        updatedDate && (
+        NewlastModified!==pubDate && (
           <div class="text-right font-bold text-base">
-            更新于 <time>{updatedDate}</time>
+            更新于 <time>{NewlastModified}</time>
           </div>
         )
       }
@@ -44,15 +60,6 @@ const {
     </article>
   </main>
   <!-- 评论系统 -->
-  <!-- <script is:inline src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  <div id="vcomments" class="mt-24"></div>
-  <script>
-    new Valine({
-      el: "#vcomments",
-      appId: "qnPlNPXR7mRtINtFAaKmqtve-gzGzoHsz",
-      appKey: "O9uUPIazfGIDoeVlHJaW47fi",
-    });
-  </script> -->
   <div
     id="cusdis_thread"
     data-host="https://cusdis-blog-comment-qfi3nkhkj-real-rio.vercel.app"
@@ -63,7 +70,10 @@ const {
     class="mt-24"
   >
   </div>
-  <script defer src="https://cusdis-blog-comment.vercel.app/js/widget/lang/zh-cn.js"></script>
+  <script
+    defer
+    src="https://cusdis-blog-comment.vercel.app/js/widget/lang/zh-cn.js"
+  ></script>
   <script
     async
     defer
