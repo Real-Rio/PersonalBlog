@@ -9,10 +9,10 @@ dayjs.extend(utc);
 
 export interface Props {
   headings: {
-      depth: number;
-      slut: string;
-      text: string;
-    }[];
+    depth: number;
+    slut: string;
+    text: string;
+  }[];
   content: {
     title: string;
     description: string;
@@ -25,19 +25,10 @@ export interface Props {
 
 const {
   headings,
-  content: {
-    title,
-    description,
-    pubDate,
-    heroImage,
-    location,
-    lastModified,
-  },
+  content: { title, description, pubDate, heroImage, location, lastModified },
 } = Astro.props;
 
-const NewlastModified = dayjs(lastModified)
-  .utc()
-  .format("YYYY.MM.DD");
+const NewlastModified = dayjs(lastModified).utc().format("YYYY.M.DD");
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -47,29 +38,30 @@ const NewlastModified = dayjs(lastModified)
       <h1 class="title my-2 text-4xl font-bold">{title}</h1>
       {
         pubDate && (
-          <div class="text-right font-bold text-base">
+          <div class="text-right font-bold text-base italic">
             <time>{pubDate}</time>
           </div>
         )
       }
       {
-        NewlastModified!==pubDate && (
-          <div class="text-right font-bold text-base">
-            更新于 <time>{NewlastModified}</time>
+        NewlastModified !== pubDate && (
+          <div class="text-right font-bold text-base italic">
+            更新于 <time class="italic">{NewlastModified}</time>
           </div>
         )
       }
       {location && <div class="text-right font-bold text-base">{location}</div>}
       <div class="divider my-2"></div>
       <!-- 目录 -->
-      <Menu headings={headings}></Menu>
+      <Menu headings={headings} />
       <slot />
     </article>
   </main>
   <!-- 评论系统 -->
+  <!-- vercel被墙,使用域名comment.rioblog.fun -->
   <div
     id="cusdis_thread"
-    data-host="https://cusdis-blog-comment-qfi3nkhkj-real-rio.vercel.app"
+    data-host="https://comment.rioblog.fun"
     data-app-id="69026cb6-cc1a-4c56-82fc-f87b0c99be8e"
     data-page-id={title}
     data-page-url="{{ PAGE_URL }}"
@@ -77,13 +69,8 @@ const NewlastModified = dayjs(lastModified)
     class="mt-24"
   >
   </div>
-  <script
-    defer
-    src="https://cusdis-blog-comment.vercel.app/js/widget/lang/zh-cn.js"
+  <script defer src="https://comment.rioblog.fun/js/widget/lang/zh-cn.js"
   ></script>
-  <script
-    async
-    defer
-    src="https://cusdis-blog-comment-qfi3nkhkj-real-rio.vercel.app/js/cusdis.es.js"
+  <script async defer src="https://comment.rioblog.fun/js/cusdis.es.js"
   ></script>
 </BaseLayout>
