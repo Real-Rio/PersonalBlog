@@ -18,7 +18,7 @@ export interface Props {
     description: string;
     pubDate?: string;
     heroImage?: string;
-    lastModified: string;
+    lastModified?: string;
     location?: string;
   };
 }
@@ -28,7 +28,7 @@ const {
   content: { title, description, pubDate, heroImage, location, lastModified },
 } = Astro.props;
 
-const NewlastModified = dayjs(lastModified).utc().format("YYYY.M.DD");
+const NewlastModified = lastModified? dayjs(lastModified).utc().format("YYYY.M.DD"):0;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -44,7 +44,7 @@ const NewlastModified = dayjs(lastModified).utc().format("YYYY.M.DD");
         )
       }
       {
-        NewlastModified !== pubDate && (
+        NewlastModified!==0 && (
           <div class="text-right font-bold text-base italic">
             更新于 <time class="italic">{NewlastModified}</time>
           </div>
