@@ -8,7 +8,7 @@ tags: ["CS自学记录"]
 
 ## lab3
 
-<img src="/Users/rio/Desktop/image-20240206220728100.png" alt="image-20240206220728100" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/Real-Rio/pictures/img/image-20240206220728100.png" style="zoom:50%;" />
 
 lab3 在 lab2 的基础上实现一个上层的 kv 存储服务，有 client 和 server 两个新角色。client 有 get 和 putappend 两种操作，当 client 首先向随机的一个 server 发起请求，如果这个 server 不是 raft 中的 leader 则返回失败，client 再向另一个 server 发起请求，直到请求到达 leader。server 接收到请求后，会调用下层 raft 协议中的 Start() 函数，直到这个请求被 raft 网络中的大多数节点 commit 并随后 apply 给上层 server 后，server 才会向 client 返回结果
 
@@ -194,7 +194,3 @@ func (kv *KVServer) saveSnap(index int) {
 	kv.rf.Snapshot(index, data)
 }
 ```
-
-
-
-#### 
